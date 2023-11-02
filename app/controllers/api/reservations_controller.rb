@@ -11,6 +11,12 @@ module Api
       end
     end
 
+    def index
+      user_id = current_user.id
+      reservations = Reservation.where(user_id: user_id)
+      render json: reservations, status: :ok
+    end
+
     private
 
     def reservation_params
