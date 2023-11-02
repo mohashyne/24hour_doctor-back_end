@@ -27,9 +27,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 24hour_doctor_back_end <a name="about-project"></a>
+# 📖 hello_rails_back_end <a name="about-project"></a>
 
-**24hour_doctor_back_end** The backend for this project is built using Ruby on Rails as an API. It's a simple API connected to a PostgreSQL database designed for storing greeting messages. The API has a single endpoint which randomly selects one of these messages to send to the frontend.
+**hello_rails_back_end** The backend for this project is built using Ruby on Rails as an API. It's a simple API connected to a PostgreSQL database designed for storing greeting messages. The API has a single endpoint which randomly selects one of these messages to send to the frontend.
+
 
 
 ## 💻 link to front end <a name="built-with"></a>
