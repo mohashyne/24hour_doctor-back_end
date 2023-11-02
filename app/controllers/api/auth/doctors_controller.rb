@@ -1,29 +1,26 @@
-class DoctorsController < ApplicationController
-    
-    
+module Api
+  class DoctorsController < ApplicationController
     def index
-        # TODO: modify the fetch Doctors frontend interaction, if needed
       @doctors = Doctor.all
     end
-  
+
     def new
       @doctor = Doctor.new
     end
-  
+
     def create
       @doctor = Doctor.new(doctor_params)
       if @doctor.save
-        redirect_to doctors_path
+        render json: { message: 'Doctor created successfully!' }, status: :created
       else
-        render 'new'
+        render json: { error: 'Doctor creation failed. Please try again.' }, status: :unprocessable_entity
       end
     end
-  
-  
+
     private
-  
+
     def doctor_params
       params.require(:doctor).permit(:name, :specialty)
     end
   end
-  
+end
