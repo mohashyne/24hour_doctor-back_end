@@ -50,4 +50,5 @@ end
 gem "devise", "~> 4.9"
 
 gem 'devise_token_auth'
+gem 'omniauth'
 
