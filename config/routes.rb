@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
 
     resources :doctors
-    resources :reservations, only: %i[create show]
+    resources :reservations, except: [:edit, :update]
   end
 end
