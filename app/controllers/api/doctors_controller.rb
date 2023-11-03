@@ -17,6 +17,14 @@ module Api
       end
     end
 
+    def show
+      @doctor = Doctor.find(params[:id])
+      render json: @doctor, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Doctor not found' }, status: :not_found
+    end
+    
+
     private
 
     def doctor_params
