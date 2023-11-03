@@ -23,7 +23,24 @@ module Api
     rescue ActiveRecord::RecordNotFound
       render json: { error: 'Doctor not found' }, status: :not_found
     end
-    
+
+    def update
+      @doctor = Doctor.find(params[:id])
+      if @doctor.update(doctor_params)
+        render json: { message: 'Doctor updated successfully!' }, status: :ok
+      else
+        render json: { error: 'Doctor update failed. Please try again.' }, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      @doctor = Doctor.find(params[:id])
+      if @doctor.destroy
+        render json: { message: 'Doctor deleted successfully!' }, status: :ok
+      else
+        render json: { error: 'Doctor deletion failed. Please try again.' }, status: :unprocessable_entity
+      end
+    end
 
     private
 
