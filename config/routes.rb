@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       post "login", to: "sessions#create"
     end
 
-    #API endpoint for retrieving all doctors already implemented
+    #API endpoint for deleting a doctor already implemented
     resources :doctors
     resources :reservations, only: %i[create show]
   end
