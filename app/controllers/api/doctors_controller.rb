@@ -42,7 +42,6 @@ module Api
       end
     end
 
-
     private
 
     def doctor_params
