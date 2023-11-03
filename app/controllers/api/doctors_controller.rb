@@ -23,7 +23,7 @@ module Api
     rescue ActiveRecord::RecordNotFound
       render json: { error: 'Doctor not found' }, status: :not_found
     end
-    
+
     def update
       @doctor = Doctor.find(params[:id])
       if @doctor.update(doctor_params)
