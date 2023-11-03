@@ -13,7 +13,7 @@ module Api
 
     def index
       user_id = current_user.id
-      reservations = Reservation.where(user_id: user_id)
+      reservations = Reservation.where(user_id: user_id) # rubocop:disable Style/HashSyntax
       render json: reservations, status: :ok
     end
 
