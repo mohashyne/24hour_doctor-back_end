@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # API routes
   namespace :api, defaults: { format: :json } do
-    namespace :omniauth do
+    namespace :auth do
       post "login", to: "sessions#create"
     end
 
