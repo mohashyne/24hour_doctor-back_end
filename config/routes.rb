@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     resources :doctors
     resources :reservations, only: %i[create show]
     #use Registration Endpoint
-    resources :users, only: [:create, :show]
+    resources :users, only: [:create, :show] do
+      collection do
+        get 'search_by_email'
+      end
+    end
   end
 
 end
