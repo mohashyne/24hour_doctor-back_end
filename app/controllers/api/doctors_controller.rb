@@ -3,11 +3,11 @@ module Api
     def index
       @doctors = Doctor.all
       render json: @doctors, status: :ok
-    end
+    end  
 
-    def new
+     def new
       @doctor = Doctor.new
-    end
+    end   
 
     def create
       @doctor = Doctor.new(doctor_params)
@@ -16,12 +16,12 @@ module Api
       else
         render json: { error: 'Doctor creation failed. Please try again.' }, status: :unprocessable_entity
       end
-    end
+    end 
 
-    def show
+     def show
       @doctor = Doctor.find(params[:id])
       render json: @doctor, status: :ok
-    end
+    end 
 
     def update
       @doctor = Doctor.find(params[:id])
@@ -31,7 +31,7 @@ module Api
         render json: { error: 'Doctor update failed. Please try again.' }, status: :unprocessable_entity
       end
     end
-
+        
     def destroy
       @doctor = Doctor.find(params[:id])
       if @doctor.destroy
@@ -39,14 +39,13 @@ module Api
       else
         render json: { error: 'Doctor deletion failed. Please try again.' }, status: :unprocessable_entity
       end
+    end  
+    
+         private   
+          def doctor_params
+          params.require(:doctor).permit(:name, :specialty)
+        rescue ActiveRecord::RecordNotFound
+          render json: { error: 'Doctor not found' }, status: :not_found
+        end
+      end
     end
-
-    private
-
-    def doctor_params
-      params.require(:doctor).permit(:name, :specialty)
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: 'Doctor not found' }, status: :not_found
-    end
-  end
-end
