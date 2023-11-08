@@ -17,6 +17,11 @@ module Api
       render json: reservations, status: :ok
     end
 
+    def show
+      @reservation = Reservation.find(params[:id])
+      render json: @reservation, status: :ok
+    end
+
     private
 
     def reservation_params

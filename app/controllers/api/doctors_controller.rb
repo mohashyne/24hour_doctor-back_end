@@ -23,14 +23,6 @@ module Api
       render json: @doctor, status: :ok
     end
 
-    private
-
-    def doctor_params
-      params.require(:doctor).permit(:name, :specialty)
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: 'Doctor not found' }, status: :not_found
-    end
-
     def update
       @doctor = Doctor.find(params[:id])
       if @doctor.update(doctor_params)
@@ -47,6 +39,14 @@ module Api
       else
         render json: { error: 'Doctor deletion failed. Please try again.' }, status: :unprocessable_entity
       end
+    end
+
+    private
+
+    def doctor_params
+      params.require(:doctor).permit(:name, :specialty)
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Doctor not found' }, status: :not_found
     end
   end
 end
