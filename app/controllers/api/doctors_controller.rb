@@ -5,7 +5,7 @@ module Api
       render json: @doctors, status: :ok
     end  
 
-     def new
+    def new
       @doctor = Doctor.new
     end   
 
@@ -18,7 +18,7 @@ module Api
       end
     end 
 
-     def show
+    def show
       @doctor = Doctor.find(params[:id])
       render json: @doctor, status: :ok
     end 
@@ -41,11 +41,11 @@ module Api
       end
     end  
     
-         private   
-          def doctor_params
-          params.require(:doctor).permit(:name, :specialty)
-        rescue ActiveRecord::RecordNotFound
-          render json: { error: 'Doctor not found' }, status: :not_found
-        end
-      end
+    private   
+    def doctor_params
+      params.require(:doctor).permit(:name, :specialty)
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Doctor not found' }, status: :not_found
     end
+  end
+end
