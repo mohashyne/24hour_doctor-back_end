@@ -9,6 +9,23 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search_by_email
+    email = params[:email]
+
+    @user = User.find_by(email: email)
+
+    if @user
+      user_info = {
+        id: @user.id,
+        username: @user.name,
+        email: @user.email
+      }
+      render json: { user: user_info }, status: :ok
+    else
+      render json: { error: 'User not found' }, status: :not_found
+    end
+  end
+
   private
 
   def user_params

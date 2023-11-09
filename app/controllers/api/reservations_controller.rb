@@ -12,9 +12,12 @@ module Api
     end
 
     def index
-      user_id = current_user.id
-      reservations = Reservation.where(user_id: user_id) # rubocop:disable Style/HashSyntax
-      render json: reservations, status: :ok
+      if params[:user_id].present?
+        reservations = Reservation.where(user_id: params[:user_id])
+        render json: reservations, status: :ok
+      else
+        render json: { error: 'User ID parameter is missing.' }, status: :unprocessable_entity
+      end
     end
 
     def show
