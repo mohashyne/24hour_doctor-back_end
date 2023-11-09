@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
     #API endpoint for deleting a doctor already implemented
     resources :doctors
-    resources :reservations, only: %i[create show]
+    resources :reservations, only: %i[create show update destroy]
     get '/reservations', to: 'reservations#index', as: 'search_reservations'
     #use Registration Endpoint
     resources :users, only: [:create, :show] do
