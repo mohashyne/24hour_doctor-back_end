@@ -3,8 +3,6 @@ module Api
     def create
       @reservation = Reservation.new(reservation_params)
       if @reservation.save
-        send_reservation_notification(@reservation)
-        ReservationMailer.confirmation_email(@reservation).deliver_later
         render json: { message: 'Reservation successful!' }, status: :created
       else
         render json: { error: 'Reservation failed. Please try again.' }, status: :unprocessable_entity
@@ -20,6 +18,26 @@ module Api
       end
     end
 
+    def update
+      @reservation = Reservation.find(params[:id])
+    
+      if @reservation.update(reservation_params)
+        render json: { message: 'Reservation updated successfully!' }, status: :ok
+      else
+        render json: { error: 'Reservation update failed. Please try again.' }, status: :unprocessable_entity
+      end
+    end
+    
+    def destroy
+      @reservation = Reservation.find(params[:id])
+    
+      if @reservation.destroy
+        render json: { message: 'Reservation deleted successfully!' }, status: :ok
+      else
+        render json: { error: 'Reservation deletion failed. Please try again.' }, status: :unprocessable_entity
+      end
+    end    
+
     def show
       @reservation = Reservation.find(params[:id])
       render json: @reservation, status: :ok
@@ -29,10 +47,6 @@ module Api
 
     def reservation_params
       params.require(:reservation).permit(:date, :city, :user_id, :doctor_id)
-    end
-
-    def send_reservation_notification(reservation)
-      NotificationService.notify_user(reservation.user, 'Reservation successful')
     end
   end
 end
