@@ -20,23 +20,23 @@ module Api
 
     def update
       @reservation = Reservation.find(params[:id])
-    
+
       if @reservation.update(reservation_params)
         render json: { message: 'Reservation updated successfully!' }, status: :ok
       else
         render json: { error: 'Reservation update failed. Please try again.' }, status: :unprocessable_entity
       end
     end
-    
+
     def destroy
       @reservation = Reservation.find(params[:id])
-    
+
       if @reservation.destroy
         render json: { message: 'Reservation deleted successfully!' }, status: :ok
       else
         render json: { error: 'Reservation deletion failed. Please try again.' }, status: :unprocessable_entity
       end
-    end    
+    end
 
     def show
       @reservation = Reservation.find(params[:id])
