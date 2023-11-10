@@ -1,18 +1,18 @@
 databases:
-  - name: 24hours_Doctor
-    databaseName: 24hours_Doctor
-    user: db_24hours_doctor_user
+  - name: 24Hours_Doctor
+    databaseName: db_24hours_doctor_9uak
+    user: db_24hours_doctor_9uak_user
 
 services:
   - type: web
-    name: 24hours_Doctor
+    name: 24hours_Doctor_Backend
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: 24hours_Doctor
+          name: db_24hours_doctor_9uak
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
