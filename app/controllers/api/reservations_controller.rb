@@ -18,6 +18,11 @@ module Api
       end
     end
 
+    def get_all
+      reservations = Reservation.all
+      render json: reservations, status: :ok
+    end
+
     def update
       @reservation = Reservation.find(params[:id])
     
