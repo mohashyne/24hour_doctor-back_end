@@ -10,7 +10,21 @@ module Api
     end
 
     def create
-      @doctor = Doctor.new(doctor_params)
+      default_image_url = "https://cdn.vectorstock.com/i/preview-2x/12/29/icon-of-medical-doctor-with-shadow-in-modern-flat-vector-3351229.webp"
+      
+      if params[:doctor][:image].present?
+        selected_image = params[:doctor][:image] 
+    
+        @doctor = Doctor.new(doctor_params.merge(image: selected_image, image_url: default_image_url))
+      elsif params[:doctor][:image_url].present?
+      
+        image_url = params[:doctor][:image_url]
+        @doctor = Doctor.new(doctor_params.merge(image_url: image_url))
+      else
+    
+       @doctor = Doctor.new(doctor_params.merge(image_url: default_image_url))
+      end
+    
       if @doctor.save
         render json: { message: 'Doctor created successfully!' }, status: :created
       else
@@ -44,7 +58,7 @@ module Api
     private
 
     def doctor_params
-      params.require(:doctor).permit(:name, :specialty)
+      params.require(:doctor).permit(:name, :specialty, :image_url, :image)
     rescue ActiveRecord::RecordNotFound
       render json: { error: 'Doctor not found' }, status: :not_found
     end
