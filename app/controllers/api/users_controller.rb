@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   def search_by_email
     email = params[:email]
 
-    @user = User.find_by(email: email)
+    @user = User.find_by(email)
 
     if @user
       user_info = {
