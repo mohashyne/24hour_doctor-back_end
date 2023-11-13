@@ -18,7 +18,7 @@ module Api
       end
     end
 
-    def get_all
+    def all_reservations
       reservations = Reservation.all
       render json: reservations, status: :ok
     end
