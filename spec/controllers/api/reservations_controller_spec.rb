@@ -19,7 +19,6 @@ RSpec.describe Api::ReservationsController, type: :controller do
     end
   end
 
-
   describe 'GET #index' do
     context 'with missing user_id parameter' do
       it 'returns unprocessable_entity status' do
