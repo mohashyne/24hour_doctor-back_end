@@ -12,7 +12,11 @@ class Api::UsersController < ApplicationController
   def search_by_email
     email = params[:email]
 
+<<<<<<< HEAD
     @user = User.find_by(email:)
+=======
+    @user = User.find_by(email)
+>>>>>>> 4a811b04aaeb3073dba4371fe4aab15d3795a8ca
 
     if @user
       user_info = {

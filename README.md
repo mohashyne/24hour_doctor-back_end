@@ -7,7 +7,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 24hours\Doctor\_back\_end ](#-24hours_doctor_back_end-)
+- [📖 24hours\Doctor_back_end ](#-24hours_doctor_back_end-)
   - [💻 link to front end ](#-link-to-front-end-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -31,10 +31,7 @@
 
 **hello_rails_back_end** The backend for this project is built using Ruby on Rails as an API. It's a simple API connected to a PostgreSQL database designed for storing greeting messages. The API has a single endpoint which randomly selects one of these messages to send to the frontend.
 
-
-
 ## 💻 link to front end <a name="built-with"></a>
-
 
 [Link to Front End](https://github.com/mohashyne/24hour_doctor-front_end)
 
@@ -59,7 +56,6 @@
   </ul>
 </details>
 
-
 ### Key Features <a name="key-features"></a>
 
 - [x] **Ruby on Rails and React Integration**
@@ -70,9 +66,7 @@
 - [x] **Git Version Control**
 - [x] **Interactive User Interface**
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -114,14 +108,28 @@ rails server
 - Twitter: [@muhammadslyhu](https://twitter.com/muhammadsalyhu)
 - LinkedIn: [muhammad-salihu](https://linkedin.com/in/msalyhu)
 
+👤 **Lawrence Muema Kioko**
+
+- GitHub: [@githubhandle](https://github.com/Kidd254)
+- Twitter: [@twitterhandle](https://twitter.com/lawrenc98789206)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lawrence-muema-kioko)
+
+👤 **Henok Mekonnen**
+
+- GitHub: [@githubhandle](https://github.com/henask12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/henokmekonnen1)
+
+👤 **Ricardo Martínez**
+
+- GitHub: [@bohaz](https://github.com/bohaz)
+- Twitter: [@Ricardo29115571](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Personalized Greetings**
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,23 +141,21 @@ Feel free to check the [issues page](https://github.com/mohashyne/24hour_doctor-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project please feel free to send me corrections for make it better I would feel glad to read your comments.
-And think If you enjoy gift me a star.  
+And think If you enjoy gift me a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
- - Microverse for providing the opportunity to learn Git and GitHub in a collaborative environment.
- - GitHub Docs for providing a wealth of information on Git and GitHub.
+- Microverse for providing the opportunity to learn Git and GitHub in a collaborative environment.
+- GitHub Docs for providing a wealth of information on Git and GitHub.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
 
 - **Can I use with a templeate your project?**
 
@@ -160,7 +166,6 @@ And think If you enjoy gift me a star.
   - Yeah, you can use it completely
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 📝 License <a name="license"></a>
 
