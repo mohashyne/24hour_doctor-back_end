@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     namespace :auth do
       post "login", to: "sessions#create"
     end
+    get '/reservations/getall', to: 'reservations#get_all', as: 'get_all_reservations'
 
     #API endpoint for deleting a doctor already implemented
     resources :doctors
