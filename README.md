@@ -47,6 +47,7 @@
     <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
     <li><a href="https://reactjs.org/">React</a></li>
     <li><a href="https://redux.js.org/">Redux</a></li>
+    <li><a href="#">Postgresql</a></li>
   </ul>
 </details>
 <details>
@@ -89,16 +90,40 @@ git clone https://github.com/mohashyne/24hour_doctor-back_end
 
 ### Install
 
-Install this project with:
+Install this project with the steps below:
 
-- gem install rails
-- bundle install
+- After cloning, type `cd 24hour_doctor-back_end` to access the project on the terminal.
+- Run `bundle install` to install all the required dependancies.
+- For developmente environment:
+  - Create Database with `rails db:create RAILS_ENV=development`
+  - Migrate Database with `rails db:migrate RAILS_ENV=development`
+
+- For testing porpouses:
+  - Create Database with `rails  db:create RAILS_ENV=test`
+  - Migrate Database with `rails db:migrate RAILS_ENV=test`
 
 ### Usage
 
 To run the project, execute the following command:
+- Run `rails s` to start a development server (it will run in port 3000)
+- Now, you are ready to consume the API endpoints
 
-rails server
+To run the tests of the project, execute the following command:
+- Run `rspec` to start the tests
+<br><br>
+
+### How to use this API
+
+- Consult the documentation in this link:
+https://documenter.getpostman.com/view/21240220/2s9YXmXfc3
+
+- You can use a local or remote Base URL
+
+   * Local: <a href="#">http://localhost:3000</a>
+
+   * Remote (live demo): <a href="#">https://two4hours-doctor-backend.onrender.com/</a>
+
+
 
 ## 👥 Author <a name="authors"></a>
 
@@ -169,6 +194,6 @@ And think If you enjoy gift me a star.
 
 ## 📝 License <a name="license"></a>
 
-This project is licensed under the MIT License - you can click here to have more details [MIT](LICENSE).
+This project is licensed under the MIT License - you can click here to have more details [MIT](./LICENSE).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
