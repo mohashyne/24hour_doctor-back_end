@@ -37,6 +37,8 @@
 
 [Link to Front End](https://github.com/mohashyne/24hour_doctor-front_end)
 
+[Link to Kanban Board](https://github.com/mohashyne/24hour_doctor-front_end/projects/1)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
