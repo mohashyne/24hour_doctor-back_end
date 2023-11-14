@@ -119,8 +119,6 @@ To run the project, execute the following command:
 - Run `rails s` to start a development server (it will run in port 3000)
 - Now, you are ready to consume the API endpoints
 
-To run the tests of the project, execute the following command:
-- Run `rspec` to start the tests
 <br><br>
 
 ### How to use this API
@@ -133,7 +131,6 @@ https://documenter.getpostman.com/view/21240220/2s9YXmXfc3
    * Local: <a href="#">http://localhost:3000</a>
 
    * Remote (live demo): <a href="#">https://two4hours-doctor-backend.onrender.com/</a>
-
 
 
 
