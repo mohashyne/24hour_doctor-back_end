@@ -1,6 +1,27 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # mount Rswag::Ui::Engine => '/api-docs'
+  # mount Rswag::Api::Engine => '/api-docs'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Routes for Devise Token Auth
+  mount_devise_token_auth_for "User", at: "auth"
+
+  # API routes
+  namespace :api, defaults: { format: :json } do
+    namespace :auth do
+      post "login", to: "sessions#create"
+    end
+    get '/reservations/getall', to: 'reservations#all_reservations', as: 'get_all_reservations'
+
+    #API endpoint for deleting a doctor already implemented
+    resources :doctors
+    resources :reservations, only: %i[create show update destroy]
+    get '/reservations', to: 'reservations#index', as: 'search_reservations'
+    #use Registration Endpoint
+    resources :users, only: [:create, :show] do
+      collection do
+        get 'search_by_email'
+      end
+    end
+  end
+
 end
